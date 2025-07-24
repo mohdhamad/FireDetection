@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireEye - Nearest Fire Stations</title>
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stations.css') }}">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Add custom styles if not in styles.css */
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="index-bg">
+
+    <!-- ======= Navigation Bar ======= -->
+    <nav>
+        <div class="nav-container">
+            <h1>🔥 FireEye</h1>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/index">Detection</a></li>
+                <li><a href="/stations" class="active">Stations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ======= Main Content ======= -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="fire-heading">🚒 Nearest Fire Stations</h2>
+                <p class="sub-text">This map displays fire stations near your current location. (Please allow location access)</p>
+            </div>
+
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <!-- ======= Leaflet JS ======= -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([28.6139, 77.2090], 10); // Default center: Delhi
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Example fire stations (add more if needed)
+        const fireStations = [
+            { name: "Delhi Fire Station", lat: 28.644800, lon: 77.216721 },
+            { name: "Noida Sector 1 Fire Station", lat: 28.5830, lon: 77.3150 },
+            { name: "Ghaziabad Fire Station", lat: 28.6692, lon: 77.4538 }
+        ];
+
+        // Add markers for stations
+        fireStations.forEach(station => {
+            L.marker([station.lat, station.lon]).addTo(map)
+                .bindPopup(`<b>${station.name}</b>`);
+        });
+
+        // Get user's current location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+
+                // Add marker for user's location
+                L.marker([lat, lon]).addTo(map)
+                    .bindPopup("📍 You are here")
+                    .openPopup();
+
+                // Zoom to user location
+                map.setView([lat, lon], 13);
+            }, () => {
+                console.warn("Location access denied. Showing default location.");
+            });
+        } else {
+            alert("Geolocation is not supported by your browser.");
+        }
+    </script>
+
+<footer>
+    <p>&copy; 2025 FireEye. All rights reserved.</p>
+
+    <p><strong>About Project:</strong><br>
+        FireEye is a smart Forest Fire Detection System that leverages sensor data and computer vision to predict and detect wildfire risks in real-time for faster emergency response and forest protection.
+    </p>
+
+    <p><strong>Team Members:</strong><br>
+        Rashid Arshad – <a href="mailto:rashidarshad5656@gmail.com">rashidarshad5656@gmail.com</a><br>
+        MD Hammad Wasif – <a href="mailto:wasifh912@gmail.com">wasifh912@gmail.com</a><br>
+        Prince Kumar Gupta – <a href="mailto:it21106@glbitm.ac.in">it21106@glbitm.ac.in</a>
+    </p>
+
+    <p>
+        <a href="/privacy">Privacy Policy</a> |
+        <a href="/terms">Terms of Use</a>
+    </p>
+</footer>
+
+</body>
+</html>

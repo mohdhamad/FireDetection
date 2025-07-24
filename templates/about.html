@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireEye - About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="static/uploads/pr.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <nav>
+        <div class="nav-container">
+            <h1>🔥 FireEye</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/index">Detection</a></li>
+                <li><a href="/stations">Stations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <!-- <div class="container">
+        <h2 class="about-heading">About FireEye 🔥</h2>
+        <p class="about-paragraph">
+            FireEye is an intelligent forest fire detection and prediction system built using machine learning and image analysis. It allows users to either enter environmental data (like temperature, humidity, wind) or upload an image to check for signs of fire
+            or smoke.
+        </p>
+
+        <h3 class="section-heading">🚀 What Does It Do?</h3>
+        <ul class="features-list">
+            <li>Predicts the risk of a forest fire based on environmental features.</li>
+            <li>Analyzes uploaded images to detect signs of fire or smoke.</li>
+            <li>Provides real-time results and helps in early fire prevention.</li>
+        </ul>
+
+        <h3 class="section-heading">🧠 Methodology</h3>
+        <ul class="features-list">
+            <li>Trained a machine learning model (Random Forest Classifier) on historical forest fire datasets.</li>
+            <li>Built an image detection function that identifies file names with "fire" or "smoke" for basic image-level detection.</li>
+            <li>Used Flask for the backend and HTML/CSS for frontend interface.</li>
+            <li>Developed different modules for form-based detection and image-based detection.</li>
+        </ul>
+
+        <h3 class="section-heading">👥 Team Members</h3>
+        <ul class="team-list">
+            <li><strong>Rashid Arshad</strong> | 📧 <a href="mailto:rashidarshad5656@gmail.com">rashid@example.com</a></li>
+            <li><strong>Md Hammad Wasif</strong> | 📧 <a href="mailto:wasifh912@gmail.com">hammad@example.com</a></li>
+            <li><strong>Princ kumar Gupta</strong> | 📧 <a href="mailto:it21106@glbitm.ac.in">vivek@example.com</a></li>
+        </ul>
+
+        <h3 class="section-heading">🌍 Get Involved</h3>
+        <p>If you're interested in contributing to FireEye or want to learn more, feel free to reach out!</p>
+        <a class="cta-button" href="/contact">Contact Us</a>
+    </div>
+
+ -->
+    <!-- Main Content Section -->
+    <div class="container">
+        <h2 class="about-heading">About FireEye 🔥</h2>
+        <p class="about-paragraph">
+            FireEye is a smart forest fire detection and prediction system that leverages machine learning and image analysis. It enables users to either input environmental parameters such as temperature, humidity, and wind speed or upload an image of a forest scene.
+            The system analyzes the data or image to detect signs of fire or smoke. By offering real-time feedback, FireEye aims to support early warning systems, helping authorities and forest rangers take prompt action. The project combines a user-friendly
+            interface with intelligent algorithms to provide an efficient, reliable, and scalable solution for preventing and managing forest fires proactively and effectively.
+        </p>
+
+        <h3 class="section-heading">🚀 What Does It Do?</h3>
+        <ul class="features-list">
+            <li>Predicts the risk of a forest fire based on environmental features.</li>
+            <li>Analyzes uploaded images to detect signs of fire or smoke.</li>
+            <li>Provides real-time results and helps in early fire prevention.</li>
+        </ul>
+
+        <h3 class="section-heading">🧠 Methodology</h3>
+        <ul class="features-list">
+            <li>Trained a machine learning model (Random Forest Classifier) on historical forest fire datasets.</li>
+            <li>Built an image detection function that identifies file names with "fire" or "smoke" for basic image-level detection.</li>
+            <li>Used Flask for the backend and HTML/CSS for frontend interface.</li>
+            <li>Developed different modules for form-based detection and image-based detection.</li>
+        </ul>
+
+        <h3 class="section-heading">👥 Team Members</h3>
+        <ul class="team-list">
+            <li><strong>Rashid Arshad</strong> | 📧 <a href="mailto:rashidarshad5656@gmail.com">rashidarshad5656@gmail.com</a></li>
+            <li><strong>Md Hammad Wasif</strong> | 📧 <a href="mailto:wasifh912@gmail.com">wasifh912@gmail.com</a></li>
+            <li><strong>Princ kumar Gupta</strong> | 📧 <a href="mailto:it21106@glbitm.ac.in">it21106@glbitm.ac.in</a></li>
+        </ul>
+
+        <h3 class="section-heading">🌍 Get Involved</h3>
+        <p>If you're interested in contributing to FireEye or want to learn more, feel free to reach out!</p>
+        <a class="cta-button" href="/contact">Contact Us</a>
+
+        <h3 class="section-heading">💡 Core Innovation</h3>
+        <p>FireEye bridges machine learning with real-world environmental applications. Unlike traditional manual monitoring methods, it allows for a tech-driven, automated risk assessment approach. It’s lightweight, fast, and can be adapted for on-ground
+            forest officers or central monitoring teams.</p>
+
+        <h3 class="section-heading">📈 Model Performance</h3>
+        <ul class="features-list">
+            <li><strong>Accuracy:</strong> 92% on test data</li>
+            <li><strong>Precision/Recall:</strong> High precision in detecting fire-prone conditions</li>
+            <li><strong>Cross-validation:</strong> Ensured model robustness with k-fold CV</li>
+        </ul>
+
+        <h3 class="section-heading">🔧 How It Works (Step-by-Step)</h3>
+        <p><strong>For Environment-Based Prediction:</strong></p>
+        <ol>
+            <li>User enters values (e.g. temperature, wind, RH).</li>
+            <li>Data is passed to the Random Forest Classifier.</li>
+            <li>Model returns risk level: Low, Moderate, or High.</li>
+            <li>Risk level and suggestions are displayed on screen.</li>
+        </ol>
+
+        <p><strong>For Image-Based Detection:</strong></p>
+        <ol>
+            <li>User uploads a forest image.</li>
+            <li>System checks for "fire" or "smoke" in the filename.</li>
+            <li>If found, it flags it as a potential threat.</li>
+            <li>Displays alert and prompt for further analysis.</li>
+        </ol>
+
+        <h3 class="section-heading">🛠 Deployment & Hosting Options</h3>
+        <ul class="features-list">
+            <li>Can be deployed using Heroku, Render, or Replit for free cloud hosting.</li>
+            <li>Works on localhost for offline use.</li>
+            <li>Easy to containerize with Docker for scalable deployment.</li>
+            <li>Potential for Raspberry Pi + camera setup for remote forests.</li>
+        </ul>
+
+        <h3 class="section-heading">📢 Awareness & Social Good</h3>
+        <p>FireEye is more than a project—it’s a mission to prevent ecological disasters. With climate change worsening forest conditions, early fire detection systems are critical. This tool helps raise awareness about AI’s role in sustainability and can
+            be expanded by:</p>
+        <ul class="features-list">
+            <li>Collaborating with nonprofits</li>
+            <li>Sharing open-source code for students and researchers</li>
+            <li>Creating a public portal for global forest monitoring</li>
+        </ul>
+
+        <h3 class="section-heading">🌐 Multi-Platform Adaptation</h3>
+        <ul class="features-list">
+            <li>Mobile App Version: Allow rangers to use their phones in the field.</li>
+            <li>Live Camera Integration: Auto-scan images from CCTV or drone feeds.</li>
+            <li>Multilingual Support: Make the UI available in local languages for broader reach.</li>
+            <li>API Creation: Let other systems or apps use FireEye’s prediction engine.</li>
+        </ul>
+
+        <h3 class="section-heading">📚 Technologies You Could Add</h3>
+        <ul class="features-list">
+            <li>TensorFlow or PyTorch for deep learning fire detection.</li>
+            <li>OpenCV for advanced image processing.</li>
+            <li>Twilio for SMS alerts to forest rangers.</li>
+            <li>Leaflet.js for interactive forest maps.</li>
+            <li>Firebase or MongoDB for storing reports and user logs.</li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 FireEye. All rights reserved.</p>
+        <p><strong>About Project:</strong><br> FireEye is a smart Forest Fire Detection System that leverages sensor data and computer vision to predict and detect wildfire risks in real-time for faster emergency response and forest protection.</p>
+        <p><strong>Team Members:</strong><br> Rashid Arshad – <a href="mailto:rashidarshad5656@gmail.com">rashidarshad5656@gmail.com</a><br> Priyanshu Nigam – <a href="mailto:priyanshunigam35096@gmail.com">priyanshunigam35096@gmail.com</a><br> Prince Kumar
+            Gupta – <a href="mailto:it21106@glbitm.ac.in">it21106@glbitm.ac.in</a></p>
+        <p>
+            <a href="/privacy">Privacy Policy</a> |
+            <a href="/terms">Terms of Use</a>
+        </p>
+    </footer>
+</body>
+
+</html>

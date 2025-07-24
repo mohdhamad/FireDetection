@@ -1,0 +1,179 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body.index-bg {
+    background: linear-gradient(135deg, #111 0%, #333 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+/* Navigation Styles */
+nav {
+    background: #111;
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container h1 {
+    color: #ff6a00;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #ff6a00;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6a00;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Main Content Styling */
+.container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 74, 74, 0.2);
+    text-align: center;
+}
+
+.fire-heading {
+    color: #ff4a4a;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px rgba(255, 74, 74, 0.6);
+    margin-bottom: 2rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.fire-heading:hover {
+    color: #ffa500;
+    text-shadow: 0 0 15px #ff6a00, 0 0 25px #ff9900, 0 0 35px #ff4500;
+    transform: scale(1.05);
+}
+
+/* Forms */
+form {
+    margin: 2rem 0;
+}
+
+form h3 {
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #444;
+    background: #111;
+    color: #fff;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+button {
+    padding: 0.7rem 1.5rem;
+    background: #ff4a4a;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 8px rgba(255, 74, 74, 0.5);
+    box-shadow: 0 0 10px rgba(255, 74, 74, 0.4);
+    margin-top: 1rem;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #ffa500;
+    box-shadow: 0 0 20px #ff6600, 0 0 30px #ff3300;
+    transform: scale(1.05);
+}
+
+/* Section Headings */
+.center-text {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: #ff6a00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

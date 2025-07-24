@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireEye - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+
+</head>
+
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="static/uploads/pr.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <h1><i class="fas fa-fire"></i> FireEye</h1>
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/index">Detection</a></li>
+                <li><a href="/stations">Stations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Protect Our Forests with FireEye</h1>
+            <p>Advanced fire detection technology to safeguard biodiversity and communities.</p>
+            <a href="/index" class="hero-btn">Start Detection Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Awareness Section -->
+        <section class="awareness">
+            <h2><i class="fas fa-tree"></i> Forest Fire Awareness</h2>
+            <p>Forest fires are a growing threat to our planet, destroying ecosystems, releasing massive amounts of carbon, and endangering lives. At FireEye, we’re committed to raising awareness and providing cutting-edge solutions to prevent and detect
+                wildfires.
+            </p>
+            <div class="awareness-grid">
+                <div class="awareness-card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Burning Forest">
+                    <h3>Devastating Impact</h3>
+                    <p>Fires destroy wildlife habitats, degrade air quality, and contribute to climate change by releasing stored carbon.</p>
+                </div>
+                <div class="awareness-card">
+                    <img src="static\uploads\pexels-asphotograpy-1002703 (1).jpg" alt="Prevention Tools">
+                    <h3>Prevention Matters</h3>
+                    <p>Simple actions like monitoring campfires and using technology like FireEye can prevent catastrophic fires.</p>
+                </div>
+                <div class="awareness-card">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b" alt="Healthy Forest">
+                    <h3>Protect Biodiversity</h3>
+                    <p>Preserving forests ensures the survival of countless species and maintains ecological balance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section class="stats">
+            <h2><i class="fas fa-chart-bar"></i> The Scale of the Problem</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>10M</h3>
+                    <p>Hectares burned annually worldwide</p>
+                </div>
+                <div class="stat-card">
+                    <h3>2.5B</h3>
+                    <p>Tons of CO2 released by wildfires yearly</p>
+                </div>
+                <div class="stat-card">
+                    <h3>50%</h3>
+                    <p>Wildfires caused by human activity</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prevention Tips -->
+        <section class="prevention">
+            <h2><i class="fas fa-shield-alt"></i> How to Prevent Forest Fires</h2>
+            <div class="prevention-list">
+                <div class="prevention-item">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <p><strong>Extinguish Campfires Properly</strong> - Always douse fires with water and stir ashes until cold.</p>
+                </div>
+                <div class="prevention-item">
+                    <i class="fas fa-ban"></i>
+                    <p><strong>Avoid Burning in Dry Conditions</strong> - Refrain from burning debris during windy or dry seasons.</p>
+                </div>
+                <div class="prevention-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <p><strong>Report Fires Immediately</strong> - Early reporting can prevent small fires from spreading.</p>
+                </div>
+                <div class="prevention-item">
+                    <i class="fas fa-satellite"></i>
+                    <p><strong>Use FireEye Technology</strong> - Leverage our advanced detection systems for real-time monitoring.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <h2>Join the Fight Against Wildfires</h2>
+            <p>Explore FireEye’s state-of-the-art detection tools and help protect our forests today.</p>
+            <a href="/index" class="cta-btn">Get Started <i class="fas fa-rocket"></i></a>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What causes forest fires?</h3>
+                <p>Forest fires can be caused by natural events like lightning, human activities such as unattended campfires, or climate-driven factors like prolonged droughts.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does FireEye help?</h3>
+                <p>FireEye uses AI-powered sensors and satellite data to detect fires early, enabling rapid response to minimize damage.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I contribute to fire prevention?</h3>
+                <p>Yes! Follow prevention tips, report suspicious activities, and support technologies like FireEye to make a difference.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3><i class="fas fa-fire"></i> FireEye</h3>
+                <p>Innovating for a safer tomorrow.</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 FireEye. All rights reserved.</p>
+        </div>
+    </footer> -->
+
+    <footer>
+        <p>&copy; 2025 FireEye. All rights reserved.</p>
+
+        <p><strong>About Project:</strong><br> FireEye is a smart Forest Fire Detection System that leverages sensor data and computer vision to predict and detect wildfire risks in real-time for faster emergency response and forest protection.
+        </p>
+
+        <p><strong>Team Members:</strong><br> Rashid Arshad – <a href="mailto:rashidarshad5656@gmail.com">rashidarshad5656@gmail.com</a><br> Md Hammad Wasif – <a href="mailto:wasifh912@gmail.com">wasifh912@gmail.com</a><br> Prince Kumar
+            Gupta – <a href="mailto:it21106@glbitm.ac.in">it21106@glbitm.ac.in</a>
+        </p>
+
+        <p>
+            <a href="/privacy">Privacy Policy</a> |
+            <a href="/terms">Terms of Use</a>
+        </p>
+    </footer>
+</body>
+
+</html>

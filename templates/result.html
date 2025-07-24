@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireEye - Detection Result</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body class="index-bg">
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <h1>🔥 FireEye</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/index">Detection</a></li>
+                <li><a href="/stations">Stations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="fire-heading">📝 Detection Result</h2>
+        <h3 style="color: #fff; margin-bottom: 2rem;">{{ prediction }}</h3>
+
+        <!-- Display Uploaded Image -->
+        {% if image_url %}
+            <img src="/{{ image_url }}" alt="Uploaded Fire Image" style="max-width: 100%; height: auto; border: 2px solid #ff4a4a; border-radius: 10px; margin-bottom: 2rem;">
+        {% endif %}
+
+        <!-- Back to Home Button -->
+        <a href="/">
+            <button>🔙 Back to Home</button>
+        </a>
+    </div>
+    <footer>
+        <p>&copy; 2025 FireEye. All rights reserved.</p>
+
+        <p><strong>About Project:</strong><br>
+            FireEye is a smart Forest Fire Detection System that leverages sensor data and computer vision to predict and detect wildfire risks in real-time for faster emergency response and forest protection.
+        </p>
+
+        <p><strong>Team Members:</strong><br>
+            Rashid Arshad – <a href="mailto:rashidarshad5656@gmail.com">rashidarshad5656@gmail.com</a><br>
+            Md Hammad Wasif– <a href="mailto:wasifh912@gmail.com">wasifh912@gmail.com</a><br>
+            Prince Kumar Gupta – <a href="mailto:it21106@glbitm.ac.in">it21106@glbitm.ac.in</a>
+        </p>
+
+        <p>
+            <a href="/privacy">Privacy Policy</a> |
+            <a href="/terms">Terms of Use</a>
+        </p>
+    </footer>
+</body>
+</html>

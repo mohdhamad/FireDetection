@@ -1,0 +1,77 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireEye - Detection</title>
+
+    <!-- Link to your CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+
+<body class="index-bg">
+
+    <!-- Background Video -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="{{ url_for('static', filename='uploads/pr.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <h1>🔥 FireEye</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/index">Detection</a></li>
+                <li><a href="/stations">Stations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Detection Section -->
+    <div class="container">
+        <h2 class="fire-heading">🌲 Forest Fire Detection System 🔥</h2>
+
+        <!-- Prediction Form -->
+        <form action="/predict" method="POST">
+            <h3>Enter Forest Data</h3>
+            {% for i in range(1, 13) %}
+                <input type="number" step="any" name="feature{{ i }}" placeholder="Feature {{ i }}" required><br>
+            {% endfor %}
+            <input type="submit" value="Predict Fire Risk" class="fire-button">
+        </form>
+
+        <!-- Image Upload Form -->
+        <h3 class="center-text">Or Upload an Image</h3>
+        <form action="/detect_image" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required><br>
+            <input type="submit" value="Upload and Detect" class="fire-button">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 FireEye. All rights reserved.</p>
+
+        <p><strong>About Project:</strong><br>
+            FireEye is a smart Forest Fire Detection System that leverages sensor data and computer vision to predict and detect wildfire risks in real-time for faster emergency response and forest protection.
+        </p>
+
+        <p><strong>Team Members:</strong><br>
+            Rashid Arshad – <a href="mailto:rashidarshad5656@gmail.com">rashidarshad5656@gmail.com</a><br>
+            Md Hammad Wasif – <a href="wasifh912@gmail.com">wasifh912@gmail.com</a><br>
+            Prince Kumar Gupta – <a href="mailto:it21106@glbitm.ac.in">it21106@glbitm.ac.in</a>
+        </p>
+
+        <p>
+            <a href="/privacy">Privacy Policy</a> |
+            <a href="/terms">Terms of Use</a>
+        </p>
+    </footer>
+
+</body>
+</html>
